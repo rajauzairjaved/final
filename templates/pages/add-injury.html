@@ -1,0 +1,74 @@
+
+{% extends "index.html" %}
+
+{% block artist %}
+
+<a href="#"  data-toggle="modal" data-target="#myModal">Add Artist</a>
+{% endblock artist %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <form action="" method="post">
+                     <div class="card">
+                         <div class="card-body">
+                             <div class="row">
+
+                                 <div class="col-md-4">
+                                     <label  for="artist_id">Artist Name</label>
+                                   <div class="form-group">
+                                    <input class="form-control form-control-lg" type="text" readonly value="{{artist.id}}" name="artist_id" required="" placeholder="artist id" autocomplete="off">
+                                   </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                      <label  for="artist_name">Artist Name</label>
+                                    <div class="form-group">
+                                         <input class="form-control form-control-lg" type="text" readonly value="{{artist.first_name+artist.last_name}}"  name="artist_name" required="" placeholder="artist name" autocomplete="off">
+                                    </div>
+                                 </div>
+                                  <div class="col-md-4">
+                                      <label  for="artist_name">Username</label>
+                                    <div class="form-group">
+                                         <input class="form-control form-control-lg" type="text" readonly value="{{user.username}}"  name="artist_name" required="" placeholder="artist name" autocomplete="off">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                     <label class="lable" for="injury_type">injury type</label>
+                                    <div class="form-group">
+                                         <input class="form-control form-control-lg" type="text"  name="injury_type" required="" placeholder="injury type" autocomplete="off">
+                                    </div>
+                                 </div>
+
+                                 <div class="col-md-4">
+                                     <lable for="injury_date" class="label">Injury Date</lable>
+                                <div class="form-group">
+                                   <input class="form-control form-control-lg" type="text"  name="injury_date" required="" placeholder="injury date yyyy-mm-dd" autocomplete="off">
+                             </div>
+                            </div>
+                                 <div class="col-md-4">
+                                     <label  for="excepted_recovery_date" > Excepted Recovery Date</label>
+                                     <div class="form-group">
+                                       <input class="form-control form-control-lg" type="text"  name="excepted_recovery_date" required="" placeholder="excepted_recovery_date yyyy-mm-dd" autocomplete="off">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-12">
+                                      <label for="injury_discription" >Injury Discription</label>
+                                 <div class="form-group">
+
+                                 <textarea class="form-control form-control-lg" type="text" name="injury_discription"  required="" placeholder="injury_discription" autocomplete="off"/></textarea>
+                                 </div>
+                                 </div>
+
+                             </div>
+                              <div class="form-group pt-2">
+                                    <button class="btn btn-block btn-primary" type="submit">Add Injury</button>
+                                </div>
+                             </div>
+                         </div>
+          </form>
+    </div>
+</div>
+
+{% endblock content %}

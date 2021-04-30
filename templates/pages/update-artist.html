@@ -1,0 +1,96 @@
+
+{% extends "index.html" %}
+
+{% block artist %}
+
+<a href="#"  data-toggle="modal" data-target="#myModal">Add Artist</a>
+{% endblock artist %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <form action="" method="post">
+                     <div class="card">
+                         <div class="card-body">
+                             <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                         <input class="form-control form-control-lg" type="text" value="{{artist.first_name}}" name="first_name" required="" placeholder="first_name" autocomplete="off">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                <div class="form-group">
+                                   <input class="form-control form-control-lg" type="text" value="{{artist.last_name}}" name="last_name" required="" placeholder="last_name" autocomplete="off">
+                             </div>
+                            </div>
+                                 <div class="col-md-4">
+                                 <div class="form-group">
+                                 <input class="form-control form-control-lg" type="email" value="{{artist.email}}" name="email" required="" placeholder="email" autocomplete="off">
+                            </div>
+                             </div>
+                                 <div class="col-md-4">
+                                <div class="form-group">
+                                   <input class="form-control form-control-lg" type="text" value="{{artist.address}}" name="address" required="" placeholder="address" autocomplete="off">
+                             </div>
+                            </div>
+                                 <div class="col-md-4">
+                                <div class="form-group">
+                                   <input class="form-control form-control-lg" type="text" value="{{artist.mobile_no}}" name="mobile_no" required="" placeholder="mobile_no" autocomplete="off">
+                             </div>
+                            </div>
+                                 <div class="col-md-4">
+                                 <div class="form-group">
+                                 <input class="form-control form-control-lg" type="number" value="{{artist.age}}" name="age" required="" placeholder="age" autocomplete="off">
+                            </div>
+                             </div>
+                                 <div class="col-md-12">
+                                 <div class="form-group">
+                                 <textarea class="form-control form-control-lg" type="text" name="about_us"  required="" placeholder="abouts" autocomplete="off"/>{{artist.about_us}}</textarea>
+                                 </div>
+                             </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-lg" type="text" name="date_of_birth" value="{{artist.date_of_birth}}" required="" placeholder="date_of_birth" autocomplete="off">
+                                     </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="form-control" required  name="is_active">
+
+                                            <option>Is Avialable</option>
+                                             {% if artist.is_active == 1  %}
+                                            <option selected   value="1">Yes</option>
+                                            <option  value="0">No</option>
+                                            {% else %}
+                                            <option  value="1">Yes</option>
+                                            <option selected value="0">No</option>
+                                            {% endif %}
+                                        </select>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                       <input class="form-control form-control-lg" type="hidden" value="{{artist.user_id}}" name="user_id"  placeholder="user_id" autocomplete="off">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                       <input class="form-control form-control-lg" type="hidden" value="{{artist.id}}" name="artist_id"  placeholder="artist_id" autocomplete="off">
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-2">
+                                    <button class="btn btn-block btn-primary" type="submit">update Artist</button>
+                                </div>
+
+
+                                  </div>
+                             </div>
+                         </div>
+          </form>
+    </div>
+</div>
+
+{% endblock content %}
